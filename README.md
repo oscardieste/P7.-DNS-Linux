@@ -4,6 +4,7 @@ DNS Linux
 ## Configuración del archivo `docker-compose.yml`
 
 ```yaml
+# (contenido YAML aquí)
 services:
   bind9:
     container_name: oscarserver
@@ -39,4 +40,7 @@ networks:
       config:
         - subnet: 10.5.15.0/24
           gateway: 10.5.15.254
+
+
+
 
