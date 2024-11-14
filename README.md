@@ -1,7 +1,9 @@
 # P7.-DNS-Linux
 DNS Linux
 
-### Archivo YML
+## Configuración del archivo `docker-compose.yml`
+
+```yaml
 services:
   bind9:
     container_name: oscarserver
@@ -17,6 +19,7 @@ services:
       - ./conf:/etc/bind
       - ./zonas:/var/lib/bind
     restart: always
+  
   cliente:
     container_name: oscarcliente
     image: alpine
@@ -36,3 +39,4 @@ networks:
       config:
         - subnet: 10.5.15.0/24
           gateway: 10.5.15.254
+
