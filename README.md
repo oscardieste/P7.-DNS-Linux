@@ -3,7 +3,7 @@ DNS Linux
 
 ## Configuración del archivo `docker-compose.yml`
 
-```yaml
+yaml
 services:
   bind9:
     container_name: oscarserver
