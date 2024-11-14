@@ -92,6 +92,44 @@ texto       IN      TXT     "Este es un registro de texto para asircastelao.com"
 ```
 ### Comprobación de la Configuración
 
+``` docker compose up -d ```
+`` docker exec -it oscarcliente /bin/sh ``
+``
+apk update
+apk add --update bind-tools ``
+Y finalmente ejecutamos el dig para comprobar la resolución del DNS.
+
+Si todo va bien nos saldria esto:
+```
+; <<>> DiG 9.18.27 <<>> @10.5.15.1 prueba.asircastelao.int
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 45213
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+; COOKIE: 559d74fbb6bbd91c010000006d40c9cd5c21823f6d60c416 (good)
+;; QUESTION SECTION:
+;prueba.asircastelao.int.	IN	A
+
+;; ANSWER SECTION:
+prueba.asircastelao.int.	3600	IN	A	10.5.15.4
+
+;; AUTHORITY SECTION:
+.			900	IN	SOA	a.root-servers.net. nstld.verisign-grs.com. 2024111202 1800 900 604800 86400
+
+;; Query time: 28 msec
+;; SERVER: 10.5.15.1#53(10.5.15.1) (UDP)
+;; WHEN: Tue Nov 12 19:40:50 UTC 2024
+;; MSG SIZE  rcvd: 167
+
+```
+
+
+
+
 
 
 
