@@ -64,8 +64,8 @@ named.conf.options
     listen-on-v6 { any; };
 };
 ```
-```db.asircastelao.int
-
+db.asircastelao.int
+```
 $TTL    604800              #TTL (Time To Live) predeterminado en segundos
 
 @       IN      SOA     ns.asircastelao.int. admin.asircastelao.int. (
