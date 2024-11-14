@@ -45,13 +45,13 @@ networks:
 
 named.conf.local
 
-zone "asircastelao.int" {
+``` zone "asircastelao.int" {
     type master;
     file "/etc/bind/db.asircastelao.com";   # Archivo con los registros DNS de la zona
 };
-
+```
 named.conf.options
-options {
+```options {
     directory "/var/cache/bind";
     recursion yes;                      # Permitir la resolución recursiva
     allow-query { any; };               # Permitir consultas desde cualquier IP
@@ -63,8 +63,8 @@ options {
     listen-on { any; };                 # Escuchar en todas las interfaces
     listen-on-v6 { any; };
 };
-
-db.asircastelao.int
+```
+```db.asircastelao.int
 
 $TTL    604800              #TTL (Time To Live) predeterminado en segundos
 
@@ -89,7 +89,7 @@ alias   IN      CNAME   web.asircastelao.com.
 
 texto       IN      TXT     "Este es un registro de texto para asircastelao.com"
                             # Registro de texto (TXT) para "texto.asircastelao.int" con la descripción
-
+```
 ### Comprobación de la Configuración
 
 
